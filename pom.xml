@@ -9,7 +9,9 @@
     <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>
     <modules>
-        <module>rsx-trace-starter</module>
+        <module>rsx-trace-spring-boot-starter</module>
+        <module>rsx-base-common</module>
+        <module>rsx-redis-spring-boot-starter</module>
     </modules>
 
     <properties>
@@ -46,7 +48,18 @@
             <!--project modules-->
             <dependency>
                 <groupId>com.rsxtech</groupId>
-                <artifactId>rsx-trace-starter</artifactId>
+                <artifactId>rsx-trace-spring-boot-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.rsxtech</groupId>
+                <artifactId>rsx-redis-spring-boot-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.rsxtech</groupId>
+                <artifactId>rsx-base-common</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
