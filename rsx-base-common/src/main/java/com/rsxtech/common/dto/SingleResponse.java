@@ -1,4 +1,4 @@
-package com.rsxtech.dtp;
+package com.rsxtech.common.dto;
 
 /**
  * Response with single record to return

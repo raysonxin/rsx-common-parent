@@ -1,4 +1,4 @@
-package com.rsxtech.dtp;
+package com.rsxtech.common.dto;
 
 public abstract class PageQuery extends Query {
 

@@ -1,4 +1,4 @@
-package com.rsxtech.dtp;
+package com.rsxtech.common.dto;
 
 public class Query extends Command {
 

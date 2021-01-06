@@ -1,4 +1,4 @@
-package com.rsxtech.dtp;
+package com.rsxtech.common.dto;
 
 import java.util.ArrayList;
 import java.util.Collection;

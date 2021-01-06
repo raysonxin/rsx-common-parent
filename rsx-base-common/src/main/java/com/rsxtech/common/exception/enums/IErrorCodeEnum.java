@@ -1,4 +1,4 @@
-package com.rsxtech.error.enums;
+package com.rsxtech.common.exception.enums;
 
 /**
  * 错误码枚举接口

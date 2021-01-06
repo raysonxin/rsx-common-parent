@@ -1,15 +1,15 @@
-package com.rsxtech.error.assertion;
+package com.rsxtech.common.exception.assertion;
 
-import com.rsxtech.error.enums.IErrorCodeEnum;
-import com.rsxtech.error.exception.BaseException;
-import com.rsxtech.error.exception.SysException;
+import com.rsxtech.common.exception.enums.IErrorCodeEnum;
+import com.rsxtech.common.exception.BaseException;
+import com.rsxtech.common.exception.BizException;
 
 import java.text.MessageFormat;
 
 /**
- * 系统异常断言
+ * 业务异常断言
  */
-public interface SysExceptionAssert extends IErrorCodeEnum, Assert {
+public interface BizExceptionAssert extends IErrorCodeEnum, Assert {
 
     @Override
     default BaseException newException(Object... args) {
@@ -17,7 +17,7 @@ public interface SysExceptionAssert extends IErrorCodeEnum, Assert {
         if (null != args && args.length > 0) {
             msg = MessageFormat.format(this.getCode(), args);
         }
-        return new SysException(this, args, msg);
+        return new BizException(this, args, msg);
     }
 
     @Override
@@ -26,6 +26,6 @@ public interface SysExceptionAssert extends IErrorCodeEnum, Assert {
         if (null != args && args.length > 0) {
             msg = MessageFormat.format(this.getCode(), args);
         }
-        return new SysException(this, args, msg, cause);
+        return new BizException(this, args, msg, cause);
     }
 }

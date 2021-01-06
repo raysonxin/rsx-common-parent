@@ -1,6 +1,6 @@
-package com.rsxtech.error.exception;
+package com.rsxtech.common.exception;
 
-import com.rsxtech.error.enums.IErrorCodeEnum;
+import com.rsxtech.common.exception.enums.IErrorCodeEnum;
 
 /**
  * 异常基类
