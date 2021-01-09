@@ -9,7 +9,10 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 /**
- * 断言
+ * 异常断言
+ *
+ * @author raysonxin
+ * @since 2021-01-06
  */
 public interface Assert {
     /**

@@ -4,8 +4,13 @@ import com.rsxtech.common.exception.enums.IErrorCodeEnum;
 
 /**
  * 异常基类
+ *
+ * @author raysonxin
+ * @since 2021-01-06
  */
 public abstract class BaseException extends RuntimeException {
+
+    public static final long serialVersionUID = 4299499805380449963L;
 
     /**
      * 错误码
@@ -19,22 +24,33 @@ public abstract class BaseException extends RuntimeException {
         return errorCodeEnum;
     }
 
-    protected Object[] args;
-
     public BaseException(IErrorCodeEnum errorCodeEnum) {
         super(errorCodeEnum.getMessage());
         this.errorCodeEnum = errorCodeEnum;
     }
 
-    public BaseException(IErrorCodeEnum errorCodeEnum, Object[] args, String message) {
+    public BaseException(IErrorCodeEnum errorCodeEnum, String message) {
         super(message);
         this.errorCodeEnum = errorCodeEnum;
-        this.args = args;
     }
 
-    public BaseException(IErrorCodeEnum errorCodeEnum, Object[] args, String message, Throwable cause) {
+    public BaseException(IErrorCodeEnum errorCodeEnum, String message, Throwable cause) {
         super(message, cause);
         this.errorCodeEnum = errorCodeEnum;
-        this.args = args;
+    }
+
+    public BaseException(String code, String message) {
+        super(message);
+        this.errorCodeEnum = new IErrorCodeEnum() {
+            @Override
+            public String getCode() {
+                return code;
+            }
+
+            @Override
+            public String getMessage() {
+                return message;
+            }
+        };
     }
 }

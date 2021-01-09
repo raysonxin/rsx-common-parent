@@ -29,6 +29,12 @@ public class SingleResponse<T> extends Response {
         return response;
     }
 
+    /**
+     * 以成功的方式返回数据
+     *
+     * @param data 返回数据
+     * @return 返回
+     */
     public static <T> SingleResponse<T> of(T data) {
         SingleResponse<T> response = new SingleResponse<>();
         response.setSuccess(true);

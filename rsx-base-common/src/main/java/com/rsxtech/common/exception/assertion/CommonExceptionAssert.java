@@ -6,6 +6,12 @@ import com.rsxtech.common.exception.CommonException;
 
 import java.text.MessageFormat;
 
+/**
+ * 通用异常断言
+ *
+ * @author raysonxin
+ * @since 2021-01-06
+ */
 public interface CommonExceptionAssert extends IErrorCodeEnum, Assert {
     @Override
     default BaseException newException(Object... args) {

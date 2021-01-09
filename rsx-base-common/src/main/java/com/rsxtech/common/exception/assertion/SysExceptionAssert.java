@@ -8,6 +8,9 @@ import java.text.MessageFormat;
 
 /**
  * 系统异常断言
+ *
+ * @author raysonxin
+ * @since 2021-01-06
  */
 public interface SysExceptionAssert extends IErrorCodeEnum, Assert {
 
@@ -15,7 +18,7 @@ public interface SysExceptionAssert extends IErrorCodeEnum, Assert {
     default BaseException newException(Object... args) {
         String msg = this.getMessage();
         if (null != args && args.length > 0) {
-            msg = MessageFormat.format(this.getCode(), args);
+            msg = MessageFormat.format(this.getMessage(), args);
         }
         return new SysException(this, args, msg);
     }
@@ -24,7 +27,7 @@ public interface SysExceptionAssert extends IErrorCodeEnum, Assert {
     default BaseException newException(Throwable cause, Object... args) {
         String msg = this.getMessage();
         if (null != args && args.length > 0) {
-            msg = MessageFormat.format(this.getCode(), args);
+            msg = MessageFormat.format(this.getMessage(), args);
         }
         return new SysException(this, args, msg, cause);
     }

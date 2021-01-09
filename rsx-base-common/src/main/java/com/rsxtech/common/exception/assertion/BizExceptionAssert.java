@@ -8,6 +8,9 @@ import java.text.MessageFormat;
 
 /**
  * 业务异常断言
+ *
+ * @author raysonxin
+ * @since 2021-01-06
  */
 public interface BizExceptionAssert extends IErrorCodeEnum, Assert {
 
@@ -15,16 +18,16 @@ public interface BizExceptionAssert extends IErrorCodeEnum, Assert {
     default BaseException newException(Object... args) {
         String msg = this.getMessage();
         if (null != args && args.length > 0) {
-            msg = MessageFormat.format(this.getCode(), args);
+            msg = MessageFormat.format(this.getMessage(), args);
         }
-        return new BizException(this, args, msg);
+        return new BizException(this, msg);
     }
 
     @Override
     default BaseException newException(Throwable cause, Object... args) {
         String msg = this.getMessage();
         if (null != args && args.length > 0) {
-            msg = MessageFormat.format(this.getCode(), args);
+            msg = MessageFormat.format(this.getMessage(), args);
         }
         return new BizException(this, args, msg, cause);
     }

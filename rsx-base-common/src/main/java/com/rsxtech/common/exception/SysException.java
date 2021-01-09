@@ -4,6 +4,9 @@ import com.rsxtech.common.exception.enums.IErrorCodeEnum;
 
 /**
  * 系统异常
+ *
+ * @author raysonxin
+ * @since 2021-01-06
  */
 public class SysException extends BaseException {
     public SysException(IErrorCodeEnum errorCodeEnum) {
@@ -11,10 +14,10 @@ public class SysException extends BaseException {
     }
 
     public SysException(IErrorCodeEnum errorCodeEnum, Object[] args, String message) {
-        super(errorCodeEnum, args, message);
+        super(errorCodeEnum, message);
     }
 
     public SysException(IErrorCodeEnum errorCodeEnum, Object[] args, String message, Throwable throwable) {
-        super(errorCodeEnum, args, message, throwable);
+        super(errorCodeEnum, message, throwable);
     }
 }

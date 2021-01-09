@@ -1,5 +1,8 @@
 package com.rsxtech.common.dto;
 
+/**
+ * 分页查询
+ */
 public abstract class PageQuery extends Query {
 
     public static final String ASC = "ASC";
