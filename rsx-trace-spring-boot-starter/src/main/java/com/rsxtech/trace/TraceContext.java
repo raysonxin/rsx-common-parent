@@ -7,12 +7,12 @@ public class TraceContext {
     public static final String TRACE_ID_TAG = "TRACE-ID";
     private static final ThreadLocal<String> TRACE_ID_CACHE = new ThreadLocal<String>();
 
-    /**
-     * 获取上下文traceId
-     */
-    public static String getTraceId() {
-        return TRACE_ID_CACHE.get();
-    }
+//    /**
+//     * 获取上下文traceId
+//     */
+//    public static String getTraceId() {
+//        return TRACE_ID_CACHE.get();
+//    }
 
     /**
      * 线程上下文设置traceId
@@ -34,6 +34,10 @@ public class TraceContext {
      * @return traceId
      */
     public static String nextTraceId() {
-        return UUID.randomUUID().toString().replace("-", "");
+        String traceId = TRACE_ID_CACHE.get();
+        if (traceId == null) {
+            traceId = UUID.randomUUID().toString().replace("-", "");
+        }
+        return traceId;
     }
 }
